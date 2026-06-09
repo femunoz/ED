@@ -23,11 +23,16 @@ class LinealProbingHashing {
         hash.insertar(57); // 10
         // hash.insertar(67); // 11
 
+        System.out.println(hash.buscar(57));
+        System.out.println(hash.buscar(21));
         System.out.println(hash.buscar(67));
+        System.out.println(hash.buscar(105));
 
-        for (Integer nro : hash.a) {
-            System.out.print(nro + " ");
-        }
+        /*
+         * for (Integer nro : hash.a) {
+         * System.out.print(nro + " ");
+         * }
+         */
 
     }
 
@@ -66,13 +71,18 @@ class LinealProbingHashing {
             return valor;
         else {
 
-            hash = (hash + 1) % N;
-            while (a[hash] != null) {
-                if (a[hash] == valor)
+            int i = hash;
+            i = (i + 1) % N;
+            while (a[i] != null) {
+                if (a[i] == valor)
                     return valor;
-                hash = (hash + 1) % N;
-                if (isFull())
+                i = (i + 1) % N;
+                if (i == hash) // dio la vuelta completa.
                     return null;
+                /*
+                 * if (isFull())
+                 * return null;
+                 */
             }
             // FIN WHILE: a[hash] = null, no encontramos el valor
             return null;
