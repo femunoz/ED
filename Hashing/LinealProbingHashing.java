@@ -1,10 +1,11 @@
 
 class LinealProbingHashing {
 
-    int N = 10;
+    int N;
     Integer a[];
 
     public LinealProbingHashing() {
+        N = 10;
         a = new Integer[N];
     }
 
@@ -19,8 +20,8 @@ class LinealProbingHashing {
         hash.insertar(7); // 6
         hash.insertar(17); // 7
         hash.insertar(27); // 8
-        hash.insertar(37); // 9
-        hash.insertar(57); // 10
+        hash.insertar(0); // 9
+        hash.insertar(-15); // 10
         // hash.insertar(67); // 11
 
         System.out.println(hash.buscar(57));
@@ -33,7 +34,6 @@ class LinealProbingHashing {
          * System.out.print(nro + " ");
          * }
          */
-
     }
 
     public int h(Integer x, int n) {
